@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "Simple Math Questions",
+	"description": "Addition, Subtraction, Multiplication, or random simple math questions.",
+	"version": "1.0.1",
+
+	"icons": {
+		"128": "128.png"
+	},
+
+	"background": {
+		"service_worker": "background.js"
+	},
+
+	"action": {
+		"default_icon": {
+			"128": "128.png"
+		}
+	}
+}

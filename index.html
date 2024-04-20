@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Simple Math Questions</title>
+		<link rel="shortcut icon" href="128.png">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body class="add">
+
+		<p id="title" title="Type uwu in the answer box to activate hard mode">Simple Math Questions</p>
+		
+		<p id="mode">Addition</p>
+
+		<div id="gameArea">
+			<p id="numA"></p>
+			<p id="symbol"></p><p id="numB"></p>
+			<hr>
+			<div id="answers">
+				<textarea id="answer" name="answer" rows="1" placeholder="..." maxlength="4" autofocus></textarea>
+				<button id="submit" title="Submit Your Answer">></button>
+				<button id="next" class="use" title="Proceed to the Next Question">Next</button>
+			</div>
+		</div>
+		<br>
+		<div id="modes">
+			<button id="add">Addition</button>
+			<button id="sub">Subtraction</button>
+			<button id="mul">Multiplication</button>
+			<button id="rng">Random</button>
+		</div>
+
+		<div id="gameCheck">
+			<p id="check"></p>
+		</div>
+
+		<div id="gameScore">
+			<div id="header">
+				<p id="allTimeScore">All Time</p>
+				<p id="sessionScore">This Session</p>
+			</div>
+			<div id="correctScore">
+				<p class="corScore" id="correct" title="Correct All Time"></p>
+				<p class="corScore" id="correctToday" title="Correct This Session"></p>
+			</div>
+			<div id="wrongScore">
+				<p class="wroScore" id="wrong" title="Wrong All time"></p>
+				<p class="wroScore" id="wrongToday" title="Wrong This Session"></p>
+			</div>
+		</div>
+
+		<div id="notes">
+			<button id="openNote" class="use">Open Notes</button>
+			<textarea id="note" name="note" placeholder="..."></textarea>
+		</div>
+
+		<script src="script.js"></script>
+	
+	</body>
+</html>

@@ -1,0 +1,229 @@
+body {
+	color: var(--foreground);
+	background-color: var(--background);
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	overflow: hidden;
+}
+body.add {
+	--background: rgb(250, 191, 191);
+	--foreground: rgb(85, 54, 29);
+	--foreground-less: rgba(85, 54, 29, 0.75);
+}
+body.sub {
+	--background: rgb(214, 252, 214);
+	--foreground: rgb(29, 85, 50);
+	--foreground-less: rgba(29, 85, 50, 0.75);
+}
+body.mul {
+	--background: rgb(225, 221, 255);
+	--foreground: rgb(39, 29, 85);
+	--foreground-less: rgba(33, 29, 85, 0.75);
+}
+* {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	transition: 0.5s;
+}
+textarea {
+	resize: none;
+	border: none !important;
+	background-color: #0001;
+	color: var(--foreground-less);
+	outline: none !important;
+	border-radius: 4px;
+}
+button {
+	transition: opacity 0.2s;
+}
+#title {
+	font-style: italic;
+	font-weight: 600;
+	opacity: 0.25;
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	font-weight: 24px;
+	margin: 0px
+}
+#answer {
+	width: 4ch;
+	font-size: 72px;
+	text-align: right;
+}
+button:not(.use) {
+	pointer-events: none;
+	opacity: 0.5;
+}
+#gameArea {
+	font-weight: 700;
+	font-size: 72px;
+	position: absolute;
+	align-self: center;
+	justify-self: center;
+	text-align: right;
+	width: calc(4ch + 32px)
+}
+#modes {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	right: 16px;
+	top: 16px
+}
+#modes button, #openNote {
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	padding: 8px;
+	margin: 4px;
+	background: var(--foreground);
+	color: var(--background);
+	transition: 0.2s;
+}
+#modes button:hover, #openNote:hover {
+	filter: brightness(125%);
+}
+#modes button:active, #openNote:active {
+	filter: brightness(150%);
+}
+#symbol {
+	position: absolute;
+	transform: translateY(-72px) translateX(8px);
+}
+#gameArea > [id^="num"] {
+	margin: 0px !important
+}
+hr {
+	border: var(--foreground) 4px solid;
+	margin-block: 2px;
+}
+#answers #submit {
+	position: absolute;
+	font-family: "Courier New", monospace;
+	font-weight: 800;
+	border: none;
+	border-radius: 4px;
+	color: var(--foreground);
+	width: 102px;
+	height: 102px;
+	font-size: 72px;
+	transform: translateX(8px);
+	background: #0000;
+	transition: all 0.2s;
+}
+#answer:not(.use) {
+	pointer-events: none;
+	color: var(--foreground);
+	background: none;
+}
+#answers :is(#submit, #next):hover {
+	background: #0001 !important;
+}
+#answers :is(#submit, #next):active {
+	background: #0003 !important;
+}
+#submit:not(.use) {
+	opacity: 0;
+	transform: translateX(-36px) !important;
+}
+#next {
+	position: absolute;
+	display: grid;
+	border: none;
+	border-radius: 4px;
+	color: var(--foreground);
+	padding: 16px;
+	font-size: 56px;
+	background: #0000;
+	transition: all 0.2s;
+	left: calc(50% - 73.925px);
+	transform: translateY(16px);
+	opacity: 0;
+	pointer-events: none;
+}
+#next.visible {
+	display: grid;
+	pointer-events: auto;
+	opacity: 1;
+}
+#mode {
+	justify-self: center;
+	opacity: 0.75;
+	font-size: 24px;
+}
+#gameCheck {
+	justify-self: center;
+	position: absolute;
+	top: 64px;
+	text-align: center;
+	font-size: 40px;
+}
+#check:not(.correct, .wrong) {
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(24px);
+}
+#check.correct {
+	color: rgb(15, 141, 15)
+}
+#check.wrong {
+	color: rgb(192, 31, 31)
+}
+#gameScore {
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+	padding: 8px;
+	background-color: #ddda;
+	border-radius: 4px;
+	height: 100px;
+	width: 300px;
+	display: grid;
+	gap: 10px;
+	grid-template-columns: auto	auto auto;
+}
+#gameScore * {
+	display: grid;
+	text-align: center;
+	gap: 8px;
+	border-radius: 2px;
+}
+#gameScore p {
+	margin: 0px;
+	background-color: #fffa;
+	align-items: center;
+	font-size: 20px;
+}
+#header {
+	font-weight: 600;
+}
+#gameScore .corScore {
+	background-color: rgba(58, 255, 101, 0.667);
+	color: rgb(10, 56, 31)
+}
+#gameScore .wroScore {
+	background-color: rgba(255, 58, 58, 0.667);
+	color: rgb(83, 13, 13)
+}
+#notes {
+	position: absolute;
+	bottom: -266px;
+	right: 8px;
+}
+#note {
+	width: 500px;
+	height: 250px;
+	color: rgb(58, 36, 36);
+	transition: all .2s;
+}
+#openNote {
+	position: absolute;
+	right: -4px;
+	bottom: 266px;
+	transition: all .2s;
+}
+#notes.open {
+	bottom: 8px
+}
